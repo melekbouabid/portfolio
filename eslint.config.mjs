@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local sub-path preview tree (a copy of out/), staged by the
+    // "reproduce the GitHub Pages base path locally" step in DEPLOY.md.
+    ".preview/**",
   ]),
 ]);
 

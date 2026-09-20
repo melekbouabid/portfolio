@@ -1,0 +1,87 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Scopes the official Pages flow needs:
+#   contents: read  -> checkout
+#   pages: write    -> create the Pages deployment
+#   id-token: write -> OIDC token that deploy-pages exchanges for the upload URL
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live deployment at a time. cancel-in-progress MUST stay false: cancelling a
+# half-finished deployment can leave the Pages site in a broken state.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        # Deliberately NOT using `static_site_generator: next`. That option patches a
+        # next.config.js to set basePath for you; it does not understand next.config.ts
+        # and it would fight the env-driven config. We set basePath from the outputs below.
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          # "/portfolio" for a project site; "/" for a <user>.github.io site,
+          # which next.config.ts normalises to "".
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: npm run build
+
+      - name: Ensure .nojekyll
+        # Insurance only — the Pages artifact flow does not run Jekyll. Matters if
+        # anyone ever switches the Pages source back to "Deploy from a branch".
+        run: touch out/.nojekyll
+
+      - name: Verify the base path reached the HTML
+        # Turns the classic "deployed but completely unstyled" failure into a red build.
+        run: |
+          set -e
+          test -f out/index.html
+          BASE='${{ steps.pages.outputs.base_path }}'
+          if [ -n "$BASE" ] && [ "$BASE" != "/" ]; then
+            grep -q "${BASE}/_next/" out/index.html \
+              || { echo "::error::basePath missing from out/index.html — assets will 404"; exit 1; }
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
