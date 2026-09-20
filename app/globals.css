@@ -112,11 +112,16 @@
     scroll-behavior: smooth;
     /* Clears the sticky navbar so #anchor jumps don't hide headings under it. */
     scroll-padding-top: 5.5rem;
+    /*
+     * The page background lives HERE and nowhere else. <Backdrop> sits at
+     * z-index -10, which paints above the root background but below any
+     * background on <body> — so giving body its own opaque colour silently
+     * hides the grid and the glow orbs.
+     */
     background: var(--color-bg);
   }
 
   body {
-    background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);
     line-height: 1.7;

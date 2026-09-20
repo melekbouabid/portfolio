@@ -78,7 +78,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${syne.variable} ${onest.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-bg text-text antialiased">
+      {/* No background here — see the html rule in globals.css. */}
+      <body className="text-text antialiased">
         <script dangerouslySetInnerHTML={{ __html: LANG_BOOTSTRAP }} />
         <script
           type="application/ld+json"
