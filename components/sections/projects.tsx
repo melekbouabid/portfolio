@@ -22,7 +22,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
       className="flex h-full flex-col"
     >
       <div className="flex flex-wrap items-center gap-3">
-        <span className="font-mono text-label tracking-label text-accent uppercase">
+        <span className="text-xs tracking-wider2 text-accent uppercase">
           {t(project.category)}
         </span>
         {project.year && (
@@ -42,7 +42,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
 
       <BulletList items={t(project.highlights)} className="mt-5" />
 
-      <div className="mt-auto border-t border-border pt-4">
+      <div className="mt-auto border-t border-glass-border-soft pt-4">
         <TagList items={project.stack} tone={featured ? "accent" : "neutral"} />
       </div>
     </Card>
@@ -56,13 +56,13 @@ export function Projects() {
 
   return (
     <Section id="projects">
-      <SectionHeader id="projects" index="04" copy={PROJECTS_COPY} />
+      <SectionHeader id="projects" copy={PROJECTS_COPY} />
 
       <div className="space-y-6">
         {featured.map((project) => (
           <Reveal key={project.id} variants={fadeUpLg}>
             <div className="relative">
-              <Chip className="absolute -top-3 left-6 z-10 bg-bg">
+              <Chip className="absolute -top-3 left-6 z-10 bg-black">
                 {t({ fr: "Projet phare", en: "Featured" })}
               </Chip>
               <ProjectCard project={project} />

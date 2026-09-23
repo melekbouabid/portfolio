@@ -1,4 +1,4 @@
-import type { LocalizedList, SectionCopy, Stat } from "./types";
+import type { LocalizedList, LocalizedString, SectionCopy, Stat } from "./types";
 
 export const ABOUT_COPY = {
   eyebrow: { fr: "À propos", en: "About" },
@@ -10,7 +10,24 @@ export const ABOUT_COPY = {
     fr: "Pourquoi je travaille de bout en bout plutôt que sur un seul maillon.",
     en: "Why I work end to end rather than on a single link in the chain.",
   },
-} satisfies SectionCopy;
+  intro: {
+    fr: "Bonjour, je m'appelle",
+    en: "Hey, my name is",
+  },
+} satisfies SectionCopy & { intro: LocalizedString };
+
+/** Quick-read summary above the full breakdown in the skills section. */
+export const HEADLINE_SKILLS = [
+  "Python",
+  "Scikit-learn",
+  "XGBoost",
+  "LangChain",
+  "RAG",
+  "FastAPI",
+  "MLflow",
+  "React",
+  "Docker",
+] as const;
 
 /** Written from the CV profile paragraph, split for readability on the web. */
 export const ABOUT_BODY: LocalizedList = {

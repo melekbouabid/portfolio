@@ -1,4 +1,4 @@
-import { SITE_URL } from "./base-path";
+import { absolute, SITE_URL } from "./base-path";
 import { SITE, SOCIALS_READY } from "@/content/site";
 import { EDUCATION } from "@/content/education";
 import { SKILL_GROUPS } from "@/content/skills";
@@ -21,6 +21,7 @@ export function personJsonLd() {
     givenName: SITE.firstName,
     familyName: SITE.lastName,
     url: SITE_URL,
+    image: absolute("/melek.jpg"),
     jobTitle: SITE.role.fr,
     email: `mailto:${SITE.email}`,
     telephone: SITE.phoneHref,

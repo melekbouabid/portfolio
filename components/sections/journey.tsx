@@ -18,13 +18,13 @@ export function Journey() {
 
   return (
     <Section id="journey" width="narrow">
-      <SectionHeader id="journey" index="06" copy={JOURNEY_COPY} />
+      <SectionHeader id="journey" copy={JOURNEY_COPY} />
 
       <div className="relative">
         {/* The rail. Decorative — the semantics live in the <ol>. */}
         <div
           aria-hidden="true"
-          className="absolute top-2 bottom-2 left-[9px] w-px bg-gradient-to-b from-transparent via-accent to-sky"
+          className="absolute top-2 bottom-2 left-[9px] w-px bg-gradient-to-b from-transparent via-accent to-accent-deep"
         />
 
         {/* An ordered list, because it is an ordered sequence. */}
@@ -33,12 +33,12 @@ export function Journey() {
             <StaggerItem as="li" key={item.id} className="relative pl-10">
               <span
                 aria-hidden="true"
-                className="absolute top-2 left-[9px] size-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-bg"
+                className="absolute top-2 left-[9px] size-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-black"
               />
 
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span className="font-mono text-sm text-accent">{item.year}</span>
-                <span className="font-mono text-[0.625rem] tracking-label text-faint uppercase">
+                <span className="text-[0.625rem] tracking-wider2 text-faint uppercase">
                   {t(KIND_LABEL[item.kind])}
                 </span>
               </div>
@@ -55,9 +55,9 @@ export function Journey() {
         <Reveal className="relative mt-6 pl-10">
           <span
             aria-hidden="true"
-            className="absolute top-3 left-[9px] size-2.5 -translate-x-1/2 rounded-full border border-accent bg-bg"
+            className="absolute top-3 left-[9px] size-2.5 -translate-x-1/2 rounded-full border border-accent bg-black"
           />
-          <div className="rounded-card border border-dashed border-border px-4 py-3">
+          <div className="rounded-card border border-dashed border-glass-border-soft px-4 py-3">
             <p className="font-mono text-sm text-faint">
               <span aria-hidden="true">✦ </span>
               {t({

@@ -25,22 +25,22 @@ export function SkillBar({ skill, index }: { skill: Skill; index: number }) {
     <li>
       <div className="flex items-baseline justify-between gap-3">
         <span className="text-sm font-medium text-text">{skill.name}</span>
-        <span className="font-mono text-xs text-muted tabular-nums">{skill.level}%</span>
+        <span className="font-mono text-xs text-accent tabular-nums">{skill.level}%</span>
       </div>
 
       <div
         role="img"
         aria-label={label}
-        className="mt-2 h-1 w-full overflow-hidden rounded-pill bg-surface-2"
+        className="mt-2 h-1.5 w-full overflow-hidden rounded-pill bg-white/10"
       >
         {reduce ? (
           <div
-            className="h-full rounded-pill bg-gradient-to-r from-accent to-sky"
+            className="h-full rounded-pill bg-gradient-to-r from-accent-deep to-accent"
             style={{ width: `${skill.level}%` }}
           />
         ) : (
           <motion.div
-            className="h-full origin-left rounded-pill bg-gradient-to-r from-accent to-sky"
+            className="h-full origin-left rounded-pill bg-gradient-to-r from-accent-deep to-accent"
             variants={barFill(skill.level, index)}
             initial="hidden"
             whileInView="visible"
@@ -53,7 +53,7 @@ export function SkillBar({ skill, index }: { skill: Skill; index: number }) {
         Always visible, not hover-revealed. The reference hides this note behind
         :hover, which makes it unreachable on touch.
       */}
-      <p className="mt-1.5 text-xs text-faint">{t(skill.note)}</p>
+      <p className="mt-1.5 text-xs text-dim">{t(skill.note)}</p>
     </li>
   );
 }

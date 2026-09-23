@@ -43,29 +43,32 @@ export function Navbar() {
   }, [open]);
 
   const Wrapper = reduce ? "header" : motion.header;
-  const motionProps = reduce ? {} : { variants: navIn, initial: "hidden", animate: "visible" };
+  const motionProps = reduce
+    ? {}
+    : { variants: navIn, initial: "hidden", animate: "visible" };
 
   return (
     <Wrapper
       {...motionProps}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        // The reference's bar: half-black over a 10px blur.
         scrolled || open
-          ? "border-b border-border bg-bg/80 backdrop-blur-md"
-          : "border-b border-transparent",
+          ? "bg-black/50 backdrop-blur-[10px]"
+          : "bg-transparent",
       )}
     >
       <nav
         aria-label={lang === "fr" ? "Navigation principale" : "Main navigation"}
-        className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-6"
+        className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-4 px-6"
       >
-        <a href="#hero" className="font-display text-base font-bold whitespace-nowrap">
+        <a href="#hero" className="text-lg font-semibold whitespace-nowrap">
           {SITE.firstName}
           <span className="text-accent">.</span>
         </a>
 
-        {/* Desktop links. Short labels below xl: French runs ~22% wider. */}
-        <ul className="hidden items-center gap-0.5 lg:flex">
+        {/* Short labels below xl: French nav labels run ~22% wider. */}
+        <ul className="hidden items-center gap-1 lg:flex">
           {NAV_ITEMS.map((item) => {
             const isActive = active === item.id;
             return (
@@ -74,10 +77,8 @@ export function Navbar() {
                   href={`#${item.id}`}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "inline-flex min-h-9 items-center rounded-nav px-3 text-sm transition-colors duration-200",
-                    isActive
-                      ? "bg-accent-soft text-accent"
-                      : "text-muted hover:text-text",
+                    "inline-flex min-h-9 items-center rounded-btn px-3 text-sm transition-colors duration-200",
+                    isActive ? "text-accent" : "text-muted hover:text-accent",
                   )}
                 >
                   <span className="xl:hidden">{t(item.short)}</span>
@@ -94,7 +95,7 @@ export function Navbar() {
           <a
             href={asset(t(SITE.cv))}
             download=""
-            className="hidden min-h-9 items-center gap-1.5 rounded-btn bg-accent px-3.5 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover sm:inline-flex"
+            className="hidden min-h-9 items-center gap-1.5 rounded-btn border-[1.6px] border-accent px-3.5 text-xs font-medium tracking-wide text-accent uppercase transition-colors hover:bg-accent-soft sm:inline-flex"
           >
             <Download className="size-3.5" aria-hidden="true" />
             {t(SITE.cvLabel)}
@@ -107,10 +108,14 @@ export function Navbar() {
             aria-controls="mobile-nav"
             aria-label={
               open
-                ? lang === "fr" ? "Fermer le menu" : "Close menu"
-                : lang === "fr" ? "Ouvrir le menu" : "Open menu"
+                ? lang === "fr"
+                  ? "Fermer le menu"
+                  : "Close menu"
+                : lang === "fr"
+                  ? "Ouvrir le menu"
+                  : "Open menu"
             }
-            className="inline-flex size-11 items-center justify-center rounded-nav text-muted hover:text-text lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-btn text-muted hover:text-accent lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -125,7 +130,7 @@ export function Navbar() {
             initial={reduce ? undefined : "hidden"}
             animate={reduce ? undefined : "visible"}
             exit={reduce ? undefined : "exit"}
-            className="border-t border-border bg-bg lg:hidden"
+            className="border-t border-glass-border-soft bg-black/90 backdrop-blur-[10px] lg:hidden"
           >
             <ul className="mx-auto max-w-6xl px-6 py-4">
               {NAV_ITEMS.map((item) => (
@@ -135,22 +140,19 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     aria-current={active === item.id ? "true" : undefined}
                     className={cn(
-                      "flex min-h-12 items-center gap-3 rounded-nav px-3 text-sm",
+                      "flex min-h-12 items-center rounded-btn px-3 text-sm",
                       active === item.id ? "text-accent" : "text-muted",
                     )}
                   >
-                    <span aria-hidden="true" className="font-mono text-xs text-faint">
-                      {item.index}
-                    </span>
                     {t(item.label)}
                   </a>
                 </li>
               ))}
-              <li className="mt-3 border-t border-border pt-3 sm:hidden">
+              <li className="mt-3 border-t border-glass-border-soft pt-3 sm:hidden">
                 <a
                   href={asset(t(SITE.cv))}
                   download=""
-                  className="flex min-h-12 items-center gap-2 px-3 text-sm text-accent"
+                  className="flex min-h-12 items-center gap-2 px-3 text-sm text-accent uppercase"
                 >
                   <Download className="size-4" aria-hidden="true" />
                   {t(SITE.cvLabel)}

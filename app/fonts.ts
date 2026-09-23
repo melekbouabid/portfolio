@@ -1,36 +1,27 @@
-import { JetBrains_Mono, Onest, Syne } from "next/font/google";
+import { JetBrains_Mono, Poppins } from "next/font/google";
 
 /**
- * Three families, matching the reference template. All variable, all self-hosted
- * by next/font at build time — no request to fonts.googleapis.com at runtime,
- * and no preconnect needed.
+ * Poppins carries the whole design, matching the reference. Self-hosted by
+ * next/font at build time — no runtime request to Google.
  *
- * subsets: ['latin'] is sufficient for French — é è ê ç à ù î ô û are all in the
- * latin subset. Arabic is never rendered; the language list uses Latin names.
+ * subsets: ['latin'] covers French (é è ê ç à ù î ô û). Arabic is never
+ * rendered; the language list uses Latin names.
  */
-
-export const syne = Syne({
+export const poppins = Poppins({
   subsets: ["latin"],
-  // Syne's weight axis stops at 800. Asking for 900 gets a synthesised, smeared
-  // face, so 800 is the real ceiling for display type here.
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
   preload: true,
 });
 
-export const onest = Onest({
-  subsets: ["latin"],
-  variable: "--font-onest",
-  display: "swap",
-  preload: true,
-});
-
+/**
+ * Kept for one job only: the tabular percentages on the skill bars, where
+ * proportional digits make the column jitter between rows.
+ */
 export const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
-  // Mono only sets 12px labels and tags, where a swap is imperceptible. Keeping
-  // it off the critical path leaves two preload links instead of three.
   preload: false,
 });

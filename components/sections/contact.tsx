@@ -28,7 +28,7 @@ function CopyEmail() {
 
   return (
     <Button
-      variant="secondary"
+      variant="plain"
       onClick={() => {
         navigator.clipboard?.writeText(SITE.email).then(
           () => setCopied(true),
@@ -51,11 +51,11 @@ export function Contact() {
 
   return (
     <Section id="contact" width="narrow">
-      <SectionHeader id="contact" index="07" copy={CONTACT_COPY} />
+      <SectionHeader id="contact" copy={CONTACT_COPY} />
 
       <Reveal>
         <Card padding="lg">
-          <p className="font-mono text-label tracking-label text-accent uppercase">
+          <p className="text-xs tracking-wider2 text-accent uppercase">
             {t(CONTACT.preferred)}
           </p>
 
@@ -74,9 +74,9 @@ export function Contact() {
             <CopyEmail />
           </div>
 
-          <dl className="mt-8 grid gap-4 border-t border-border pt-6 sm:grid-cols-3">
+          <dl className="mt-8 grid gap-4 border-t border-glass-border-soft pt-6 sm:grid-cols-3">
             <div>
-              <dt className="font-mono text-[0.625rem] tracking-label text-faint uppercase">
+              <dt className="text-[0.625rem] tracking-wider2 text-faint uppercase">
                 {t(CONTACT.phoneLabel)}
               </dt>
               <dd className="mt-1.5 flex items-center gap-1.5 text-sm text-muted">
@@ -91,7 +91,7 @@ export function Contact() {
             </div>
 
             <div>
-              <dt className="font-mono text-[0.625rem] tracking-label text-faint uppercase">
+              <dt className="text-[0.625rem] tracking-wider2 text-faint uppercase">
                 {t(CONTACT.locationLabel)}
               </dt>
               <dd className="mt-1.5 flex items-center gap-1.5 text-sm text-muted">
@@ -101,7 +101,7 @@ export function Contact() {
             </div>
 
             <div>
-              <dt className="font-mono text-[0.625rem] tracking-label text-faint uppercase">
+              <dt className="text-[0.625rem] tracking-wider2 text-faint uppercase">
                 {t(CONTACT.languagesLabel)}
               </dt>
               <dd className="mt-1.5 text-sm text-muted">
@@ -112,12 +112,12 @@ export function Contact() {
 
           {/* Rendered only once the handles in content/site.ts are real. */}
           {SOCIALS_READY && (
-            <div className="mt-6 flex flex-wrap gap-3 border-t border-border pt-6">
-              <Button href={SITE.socials.github} variant="secondary" external>
+            <div className="mt-6 flex flex-wrap gap-3 border-t border-glass-border-soft pt-6">
+              <Button href={SITE.socials.github} variant="plain" external>
                 <GithubIcon className="size-4" />
                 GitHub
               </Button>
-              <Button href={SITE.socials.linkedin} variant="secondary" external>
+              <Button href={SITE.socials.linkedin} variant="plain" external>
                 <LinkedinIcon className="size-4" />
                 LinkedIn
               </Button>

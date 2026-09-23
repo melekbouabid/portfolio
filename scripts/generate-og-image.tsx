@@ -33,7 +33,7 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "#09090c",
+          background: "#000000",
           padding: 80,
           fontFamily: "sans-serif",
         }}
@@ -44,22 +44,22 @@ export default function OpengraphImage() {
             fontSize: 26,
             letterSpacing: 6,
             textTransform: "uppercase",
-            color: "#f97316",
+            color: "#00c7e1",
           }}
         >
           Data Science &amp; IA
         </div>
 
         <div style={{ display: "flex", marginTop: 28, fontSize: 96, fontWeight: 700 }}>
-          <span style={{ color: "#f0ede8" }}>{SITE.firstName}&nbsp;</span>
-          <span style={{ color: "#f97316" }}>{SITE.lastName}</span>
+          <span style={{ color: "#ffffff" }}>{SITE.firstName}&nbsp;</span>
+          <span style={{ color: "#00c7e1" }}>{SITE.lastName}</span>
         </div>
 
-        <div style={{ display: "flex", marginTop: 24, fontSize: 32, color: "#8b8794" }}>
+        <div style={{ display: "flex", marginTop: 24, fontSize: 32, color: "#e2e2e2" }}>
           {SITE.role.fr}
         </div>
 
-        <div style={{ display: "flex", marginTop: 48, fontSize: 24, color: "#5c5866" }}>
+        <div style={{ display: "flex", marginTop: 48, fontSize: 24, color: "#9ca3af" }}>
           Tek-Up · 2024–2027 · Tunis, Tunisie
         </div>
 
@@ -70,7 +70,7 @@ export default function OpengraphImage() {
             width: 120,
             height: 6,
             borderRadius: 99,
-            background: "#f97316",
+            background: "#00c7e1",
           }}
         />
       </div>

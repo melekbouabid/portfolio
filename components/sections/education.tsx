@@ -11,7 +11,7 @@ export function Education() {
 
   return (
     <Section id="education">
-      <SectionHeader id="education" index="05" copy={EDUCATION_COPY} />
+      <SectionHeader id="education" copy={EDUCATION_COPY} />
 
       <div className="space-y-6">
         {EDUCATION.map((item) => (
@@ -34,8 +34,8 @@ export function Education() {
                 {t(item.period)} · {t(item.location)}
               </p>
 
-              <div className="mt-6 border-t border-border pt-5">
-                <p className="font-mono text-label tracking-label text-accent uppercase">
+              <div className="mt-6 border-t border-glass-border-soft pt-5">
+                <p className="text-xs tracking-wider2 text-accent uppercase">
                   {t({ fr: "Axes du cursus", en: "Coursework" })}
                 </p>
                 <TagList items={t(item.focus)} className="mt-3" />

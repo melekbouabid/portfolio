@@ -42,7 +42,7 @@ export function Skills() {
 
   return (
     <Section id="skills">
-      <SectionHeader id="skills" index="02" copy={SKILLS_COPY} />
+      <SectionHeader id="skills" copy={SKILLS_COPY} />
 
       <div className="grid gap-6 md:grid-cols-2">
         {barGroups.map((group) => (

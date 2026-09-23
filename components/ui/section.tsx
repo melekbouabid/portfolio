@@ -14,10 +14,7 @@ interface SectionProps {
   className?: string;
 }
 
-/**
- * Owns the vertical rhythm so no section hardcodes its own padding, and pairs
- * every <section> with the heading that names it for assistive tech.
- */
+/** Owns the vertical rhythm so no section hardcodes its own padding. */
 export function Section({ id, children, width = "content", className }: SectionProps) {
   return (
     <section
@@ -39,26 +36,23 @@ export function Section({ id, children, width = "content", className }: SectionP
 
 interface SectionHeaderProps {
   id: SectionId;
-  /** "01".."07". Locale-independent, and hidden from screen readers. */
-  index: string;
   copy: SectionCopy;
   className?: string;
 }
 
-export function SectionHeader({ id, index, copy, className }: SectionHeaderProps) {
+/** Centred title over a cyan rule, matching the reference. */
+export function SectionHeader({ id, copy, className }: SectionHeaderProps) {
   const { t } = useLanguage();
 
   return (
-    <Reveal className={cn("mb-14", className)}>
-      <p className="flex items-center gap-3 font-mono text-label tracking-label text-accent uppercase">
-        {/* Read as "About", not "zero one em-dash about". */}
-        <span aria-hidden="true">{index} —</span>
-        <span>{t(copy.eyebrow)}</span>
+    <Reveal className={cn("mb-14 flex flex-col items-center text-center", className)}>
+      <p className="font-mono text-xs tracking-wider2 text-accent uppercase">
+        {t(copy.eyebrow)}
       </p>
 
       <h2
         id={`${id}-title`}
-        className="mt-4 font-display text-h2 font-bold text-text"
+        className="mt-3 font-display text-h2 font-semibold text-text"
       >
         {t(copy.title)}
       </h2>

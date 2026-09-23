@@ -12,7 +12,7 @@ export function Experience() {
 
   return (
     <Section id="experience">
-      <SectionHeader id="experience" index="03" copy={EXPERIENCE_COPY} />
+      <SectionHeader id="experience" copy={EXPERIENCE_COPY} />
 
       {/* Full-width stacked cards: with only two items a 2-col grid looks sparse
           and under-weights the strongest section. */}
@@ -42,7 +42,7 @@ export function Experience() {
 
               <BulletList items={t(item.highlights)} className="mt-6" />
 
-              <div className="mt-6 border-t border-border pt-4">
+              <div className="mt-6 border-t border-glass-border-soft pt-4">
                 <TagList items={item.stack} tone="accent" />
               </div>
             </Card>

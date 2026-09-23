@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
-import { jetbrainsMono, onest, syne } from "./fonts";
+import { jetbrainsMono, poppins } from "./fonts";
 import { absolute, SITE_URL } from "@/lib/base-path";
 import { LANG_BOOTSTRAP } from "@/lib/lang-bootstrap";
 import { personJsonLd } from "@/lib/json-ld";
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090c",
+  themeColor: "#000000",
   colorScheme: "dark",
 };
 
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="fr"
       suppressHydrationWarning
-      className={`${syne.variable} ${onest.variable} ${jetbrainsMono.variable}`}
+      className={`${poppins.variable} ${jetbrainsMono.variable}`}
     >
       {/* No background here — see the html rule in globals.css. */}
       <body className="text-text antialiased">

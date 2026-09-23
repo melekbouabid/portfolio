@@ -16,7 +16,7 @@ export default function NotFound() {
 
   return (
     <div className="mx-auto flex min-h-[70svh] max-w-3xl flex-col items-start justify-center px-6">
-      <p className="font-mono text-label tracking-label text-accent uppercase">404</p>
+      <p className="text-xs tracking-wider2 text-accent uppercase">404</p>
       <h1 className="mt-4 font-display text-h2 font-bold">
         {t({ fr: "Page introuvable", en: "Page not found" })}
       </h1>

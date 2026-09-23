@@ -5,6 +5,11 @@ engineering student at Tek-Up, Tunisia.
 
 Every section is built from the content of his CV — nothing on the site is invented.
 
+**Design:** dark cyan-on-black with glassmorphism cards, after
+[mohammedatefportfolio.vercel.app](https://mohammedatefportfolio.vercel.app/).
+The page background is two large blurred `#008FC8` glows; cards are translucent
+white over it, which is what the `backdrop-filter` blur has to work with.
+
 ## Stack
 
 | | |
@@ -14,7 +19,7 @@ Every section is built from the content of his CV — nothing on the site is inv
 | Styling | Tailwind CSS v4 — CSS-first `@theme`, no `tailwind.config.js` |
 | Animation | `motion` (Framer Motion), imported from `motion/react` |
 | Icons | `lucide-react`, plus two inline brand glyphs |
-| Fonts | Syne / Onest / JetBrains Mono, self-hosted by `next/font` |
+| Fonts | Poppins (everything) + JetBrains Mono (skill-bar figures only), self-hosted by `next/font` |
 | Hosting | GitHub Pages via GitHub Actions |
 
 ## Getting started

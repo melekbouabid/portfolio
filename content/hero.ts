@@ -11,6 +11,11 @@ export const HERO = {
     en: "Open to internships",
   } satisfies LocalizedString,
 
+  greeting: {
+    fr: "Bonjour, je suis",
+    en: "Hey, I'm",
+  } satisfies LocalizedString,
+
   /** Cycled under the name. Proper nouns, identical in both languages. */
   rotatingRoles: ["Data Science", "Machine Learning", "GenAI / RAG", "MLOps"] as const,
 
@@ -25,6 +30,7 @@ export const HERO = {
   } satisfies LocalizedString,
 
   cta: {
+    about: { fr: "À propos de moi", en: "About me" },
     projects: { fr: "Voir les projets", en: "View projects" },
     contact: { fr: "Me contacter", en: "Get in touch" },
   },
