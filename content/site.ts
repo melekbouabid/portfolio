@@ -55,13 +55,18 @@ export const SITE = {
    * same file and the UI labels it accordingly.
    */
   cv: {
-    fr: "/melek-bouabid-cv-fr.pdf",
-    en: "/melek-bouabid-cv-fr.pdf",
+    fr: "/CV.pdf",
+    en: "/Resume.pdf",
   } satisfies LocalizedString,
 
   cvLabel: {
     fr: "CV",
-    en: "Resume (FR)",
+    en: "Resume",
+  } satisfies LocalizedString,
+
+  englishCvLabel: {
+    fr: "CV en anglais",
+    en: "English Resume",
   } satisfies LocalizedString,
 } as const;
 

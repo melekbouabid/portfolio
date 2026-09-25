@@ -101,6 +101,15 @@ export function Navbar() {
             {t(SITE.cvLabel)}
           </a>
 
+          <a
+            href={asset(SITE.cv.en)}
+            download=""
+            className="hidden min-h-9 items-center gap-1.5 rounded-btn border border-glass-border-soft px-3.5 text-xs font-medium tracking-wide text-muted uppercase transition-colors hover:border-accent hover:text-accent md:inline-flex"
+          >
+            <Download className="size-3.5" aria-hidden="true" />
+            {t(SITE.englishCvLabel)}
+          </a>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -156,6 +165,14 @@ export function Navbar() {
                 >
                   <Download className="size-4" aria-hidden="true" />
                   {t(SITE.cvLabel)}
+                </a>
+                <a
+                  href={asset(SITE.cv.en)}
+                  download=""
+                  className="flex min-h-12 items-center gap-2 px-3 text-sm text-muted uppercase"
+                >
+                  <Download className="size-4" aria-hidden="true" />
+                  {t(SITE.englishCvLabel)}
                 </a>
               </li>
             </ul>

@@ -34,9 +34,8 @@ Must return nothing.
 
 ### Optional at the same time
 
-- **English CV.** `content/site.ts` points both languages at the French PDF and the
-  EN label reads "Resume (FR)" so nobody is misled. If an English CV exists, drop it
-  in `public/` and set `SITE.cv.en` plus `SITE.cvLabel.en`.
+- **English CV.** `content/site.ts` maps the French and English downloads to
+  `public/CV.pdf` and `public/Resume.pdf` respectively.
 - **Skill levels.** `content/skills.ts` carries percentages derived from evidence of
   use in the CV, capped at a junior ceiling (nothing above 85). The rubric is written
   at the top of that file. They're a calibration, not a claim Melek made — worth him
@@ -114,7 +113,7 @@ npx serve .preview -l 4000
 Open <http://127.0.0.1:4000/portfolio/>. This has been run and verified: the page is
 fully styled, the CV PDF resolves, and `robots.txt`/`sitemap.xml` return 200.
 
-Check the Network tab for 404s — especially `melek-bouabid-cv-fr.pdf`, `og.png` and
+Check the Network tab for 404s — especially `CV.pdf`, `Resume.pdf`, `og.png` and
 `icon.svg`.
 
 ## After the first deploy

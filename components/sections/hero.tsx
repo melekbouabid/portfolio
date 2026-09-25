@@ -93,6 +93,10 @@ export function Hero() {
                 <Download className="size-4" aria-hidden="true" />
                 {t(SITE.cvLabel)}
               </Button>
+              <Button href={asset(SITE.cv.en)} variant="plain" download>
+                <Download className="size-4" aria-hidden="true" />
+                {t(SITE.englishCvLabel)}
+              </Button>
             </div>
           </StaggerItem>
 
