@@ -15,8 +15,6 @@ export const CONTACT_COPY = {
 export const CONTACT = {
   preferred: { fr: "Moyen de contact préféré", en: "Preferred contact method" },
   emailCta: { fr: "Envoyer un e-mail", en: "Send an email" },
-  copy: { fr: "Copier", en: "Copy" },
-  copied: { fr: "Copié", en: "Copied" },
   phoneLabel: { fr: "Téléphone", en: "Phone" },
   locationLabel: { fr: "Localisation", en: "Location" },
   languagesLabel: { fr: "Langues", en: "Languages" },

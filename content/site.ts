@@ -1,15 +1,7 @@
 import type { LocalizedString } from "./types";
 
-/**
- * ⚠️  PLACEHOLDERS — replace before the first deploy.
- *
- * Melek's CV links "LinkedIn" and "GitHub" as anchor text, but the underlying
- * hrefs are bare (`https://github.com/`, `https://linkedin.com/`) with no handle,
- * so the real usernames are unknown. `grep -r PLACEHOLDER content/` must return
- * nothing before publishing. See DEPLOY.md.
- */
-export const GITHUB_USERNAME = "PLACEHOLDER_GITHUB_USERNAME";
-export const LINKEDIN_SLUG = "PLACEHOLDER_LINKEDIN_SLUG";
+export const GITHUB_USERNAME = "melekbouabid";
+export const LINKEDIN_SLUG = "bouabid-melek";
 
 /** True once the handles above are filled in. Dead links are hidden until then. */
 export const SOCIALS_READY = !GITHUB_USERNAME.startsWith("PLACEHOLDER");
