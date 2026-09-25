@@ -51,22 +51,11 @@ export const SITE = {
 
   /**
    * Paths under public/ — always render through asset() so the GitHub Pages
-   * base path is applied. Only the French CV exists; the EN entry points at the
-   * same file and the UI labels it accordingly.
+   * base path is applied. The French CV and English resume are separate files.
    */
   cv: {
     fr: "/CV.pdf",
     en: "/Resume.pdf",
-  } satisfies LocalizedString,
-
-  cvLabel: {
-    fr: "CV",
-    en: "Resume",
-  } satisfies LocalizedString,
-
-  englishCvLabel: {
-    fr: "CV en anglais",
-    en: "English Resume",
   } satisfies LocalizedString,
 } as const;
 

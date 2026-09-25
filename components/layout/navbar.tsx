@@ -93,21 +93,12 @@ export function Navbar() {
           <LanguageToggle />
 
           <a
-            href={asset(t(SITE.cv))}
+            href={asset(SITE.cv[lang])}
             download=""
             className="hidden min-h-9 items-center gap-1.5 rounded-btn border-[1.6px] border-accent px-3.5 text-xs font-medium tracking-wide text-accent uppercase transition-colors hover:bg-accent-soft sm:inline-flex"
           >
             <Download className="size-3.5" aria-hidden="true" />
-            {t(SITE.cvLabel)}
-          </a>
-
-          <a
-            href={asset(SITE.cv.en)}
-            download=""
-            className="hidden min-h-9 items-center gap-1.5 rounded-btn border border-glass-border-soft px-3.5 text-xs font-medium tracking-wide text-muted uppercase transition-colors hover:border-accent hover:text-accent md:inline-flex"
-          >
-            <Download className="size-3.5" aria-hidden="true" />
-            {t(SITE.englishCvLabel)}
+            {lang === "fr" ? "CV" : "Resume"}
           </a>
 
           <button
@@ -159,20 +150,12 @@ export function Navbar() {
               ))}
               <li className="mt-3 border-t border-glass-border-soft pt-3 sm:hidden">
                 <a
-                  href={asset(t(SITE.cv))}
+                  href={asset(SITE.cv[lang])}
                   download=""
                   className="flex min-h-12 items-center gap-2 px-3 text-sm text-accent uppercase"
                 >
                   <Download className="size-4" aria-hidden="true" />
-                  {t(SITE.cvLabel)}
-                </a>
-                <a
-                  href={asset(SITE.cv.en)}
-                  download=""
-                  className="flex min-h-12 items-center gap-2 px-3 text-sm text-muted uppercase"
-                >
-                  <Download className="size-4" aria-hidden="true" />
-                  {t(SITE.englishCvLabel)}
+                  {lang === "fr" ? "CV" : "Resume"}
                 </a>
               </li>
             </ul>

@@ -40,7 +40,7 @@ function RotatingRole() {
 
 /** Centred hero, matching the reference: greeting, name in cyan, outlined CTAs. */
 export function Hero() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <section
@@ -89,13 +89,9 @@ export function Hero() {
                 {t(HERO.cta.about)}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Button>
-              <Button href={asset(t(SITE.cv))} variant="plain" download>
+              <Button href={asset(SITE.cv[lang])} variant="plain" download>
                 <Download className="size-4" aria-hidden="true" />
-                {t(SITE.cvLabel)}
-              </Button>
-              <Button href={asset(SITE.cv.en)} variant="plain" download>
-                <Download className="size-4" aria-hidden="true" />
-                {t(SITE.englishCvLabel)}
+                {lang === "fr" ? "CV" : "Resume"}
               </Button>
             </div>
           </StaggerItem>
