@@ -24,7 +24,7 @@ export const SKILLS_COPY = {
  *   70-75   solid working use
  *   55-65   coursework or a single exposure
  *
- * Nothing exceeds 85. A fourth-year student claiming 95% in PyTorch reads as a
+ * Nothing exceeds 85. A fifth-year student claiming 95% in PyTorch reads as a
  * red flag to exactly the ML engineers who would interview him.
  *
  * Melek: these are my calibration, not yours — adjust freely, it is one file.

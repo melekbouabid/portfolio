@@ -32,8 +32,8 @@ export const SITE = {
   } satisfies LocalizedString,
 
   description: {
-    fr: "Étudiant en 4ᵉ année du cycle d'ingénieur à Tek-Up, spécialisé en Data Science et Intelligence Artificielle. Machine learning, NLP, architectures RAG et mise en production via API.",
-    en: "Fourth-year engineering student at Tek-Up, specialising in Data Science and Artificial Intelligence. Machine learning, NLP, RAG architectures and production deployment via APIs.",
+    fr: "Étudiant en 5ᵉ année du cycle d'ingénieur à Tek-Up, spécialisé en Data Science et Intelligence Artificielle. Machine learning, NLP, architectures RAG et mise en production via API.",
+    en: "Fifth-year engineering student at Tek-Up, specialising in Data Science and Artificial Intelligence. Machine learning, NLP, RAG architectures and production deployment via APIs.",
   } satisfies LocalizedString,
 
   socials: {
