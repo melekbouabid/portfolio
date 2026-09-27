@@ -7,8 +7,8 @@ export const ABOUT_COPY = {
     en: "From raw data to decision",
   },
   lede: {
-    fr: "Pourquoi je travaille de bout en bout plutôt que sur un seul maillon.",
-    en: "Why I work end to end rather than on a single link in the chain.",
+    fr: "Je relie les données, les modèles et les produits pour transformer un problème concret en solution utilisable.",
+    en: "I connect data, models and products to turn a concrete problem into a usable solution.",
   },
   intro: {
     fr: "Bonjour, je m'appelle",
@@ -32,14 +32,14 @@ export const HEADLINE_SKILLS = [
 /** Written from the CV profile paragraph, split for readability on the web. */
 export const ABOUT_BODY: LocalizedList = {
   fr: [
-    "Je suis en 5ᵉ année du cycle d'ingénieur en informatique à Tek-Up, spécialisé en Data Science et Intelligence Artificielle. Ce qui m'intéresse n'est pas un modèle isolé dans un notebook, mais le chemin complet : collecte et préparation des données, feature engineering, entraînement et évaluation, puis mise en production derrière une API que quelqu'un peut réellement appeler.",
-    "Ce cycle, je l'ai parcouru en entier plusieurs fois — avec XGBoost et Random Forest sur des problèmes de classification et de scoring, avec MLflow pour garder une trace des expériences, et avec FastAPI pour exposer les modèles. En stage chez STIET-Philips, j'ai construit un assistant conversationnel RAG sur des rapports techniques d'installations médicales ; l'enjeu n'était pas le modèle de langage, mais le découpage des documents et la qualité de la recherche sémantique en amont.",
-    "Ma base fullstack — React, Django, FastAPI, Docker — n'est pas un à-côté : c'est ce qui me permet de livrer une solution data utilisable, pas seulement un score dans un carnet Jupyter.",
+    "Je suis en 5ᵉ année du cycle d'ingénieur en informatique à Tek-Up, spécialisé en Data Science et Intelligence Artificielle. Je travaille sur le chemin complet : collecte et préparation des données, feature engineering, entraînement et évaluation, puis mise en production derrière une API réellement exploitable.",
+    "Mes projets couvrent la classification et le scoring avec XGBoost et Random Forest, le suivi d'expériences avec MLflow, les assistants RAG et la recherche sémantique, ainsi que des plateformes servies par FastAPI. Chez STIET-Philips, j'ai construit un assistant conversationnel RAG sur des rapports techniques d'installations médicales, avec un travail centré sur le découpage documentaire et la qualité de la recherche en amont.",
+    "Ma base fullstack — React, TypeScript, Django, FastAPI et Docker — me permet de relier les modèles à des interfaces et des produits utilisables, comme une plateforme d'analytics ML, des outils de réservation ou des applications de données synthétiques.",
   ],
   en: [
-    "I'm a fifth-year computer engineering student at Tek-Up, majoring in Data Science and Artificial Intelligence. What interests me isn't a model sitting alone in a notebook, but the whole path: collecting and preparing the data, feature engineering, training and evaluation, then shipping it behind an API someone can actually call.",
-    "I've walked that full cycle several times — with XGBoost and Random Forest on classification and scoring problems, with MLflow to keep experiments traceable, and with FastAPI to serve the models. During my internship at STIET-Philips I built a RAG assistant over technical reports for medical installations; the hard part wasn't the language model, it was how documents were chunked and how good the semantic search was upstream.",
-    "My fullstack base — React, Django, FastAPI, Docker — isn't a side interest: it's what lets me deliver a data solution people can use, not just a score in a Jupyter notebook.",
+    "I'm a fifth-year computer engineering student at Tek-Up, majoring in Data Science and Artificial Intelligence. I work across the full path: collecting and preparing data, feature engineering, training and evaluation, then shipping models behind an API people can actually use.",
+    "My projects cover classification and scoring with XGBoost and Random Forest, experiment tracking with MLflow, RAG assistants and semantic search, as well as FastAPI-powered platforms. During my internship at STIET-Philips, I built a RAG assistant over technical reports for medical installations, focusing on document chunking and the quality of upstream retrieval.",
+    "My fullstack base — React, TypeScript, Django, FastAPI and Docker — lets me connect models to usable interfaces and products, including an ML analytics platform, booking tools and synthetic-data applications.",
   ],
 };
 

@@ -98,8 +98,8 @@ export function About() {
           <Reveal>
             <Chip tone="neutral">
               {t({
-                fr: "Recherche un stage / une alternance en Data Science & IA",
-                en: "Looking for a Data Science & AI internship",
+                fr: "Data Science & IA · Machine Learning · RAG",
+                en: "Data Science & AI · Machine Learning · RAG",
               })}
             </Chip>
           </Reveal>

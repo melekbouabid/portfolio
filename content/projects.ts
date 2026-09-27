@@ -24,31 +24,21 @@ export const PROJECTS: readonly ProjectItem[] = [
     },
     problem: {
       fr: "Évaluer un risque social chez les jeunes à partir de données hétérogènes, et rendre le droit tunisien interrogeable en langage naturel sans que le modèle invente ses réponses.",
-      en: "Assess social risk among young people from heterogeneous data, and make Tunisian law queryable in natural language without the model inventing its answers.",
+      en: "Assess social risk among young people from heterogeneous data, and make Tunisian law queryable in natural language without the model hallucinating answers.",
     },
     highlights: {
       fr: [
-        "Entraîné et comparé des modèles supervisés (XGBoost, Random Forest) pour la détection de risque social, avec nettoyage des données, feature engineering et NLP sur les contenus textuels.",
-        "Conçu un assistant juridique RAG (LangChain + base vectorielle) : ingestion et découpage des textes de droit tunisien en chunks, recherche sémantique par similarité vectorielle, réponses contextualisées et fondées sur les sources — ce qui réduit nettement le risque d'hallucination.",
-        "Restitué les scores de risque, les résultats NLP et l'assistant via une interface Streamlit et un tableau de bord Power BI.",
+        "Modèle XGBoost entraîné sur 10 000 profils (18 features socio-comportementales) : prédit un score de risque et un type de crime parmi 21 catégories, ~85% d'accuracy en classification binaire.",
+        "Assistant juridique RAG : indexation TF-IDF de 1 485+ articles de loi tunisienne, recherche par similarité cosinus, réponses générées et sourcées via une chaîne de fallback LLM (Groq LLaMA 3.3 → Gemini Flash → Claude Haiku).",
+        "API FastAPI sécurisée par JWT, frontend React 18 avec dashboard de suivi des prédictions en temps réel (Recharts).",
       ],
       en: [
-        "Trained and compared supervised models (XGBoost, Random Forest) for social-risk detection, with data cleaning, feature engineering and NLP over text content.",
-        "Designed a RAG legal assistant (LangChain + vector store): ingesting and chunking Tunisian legal texts, vector-similarity semantic search, and answers grounded in the retrieved sources — which sharply reduces hallucination risk.",
-        "Surfaced risk scores, NLP results and the assistant through a Streamlit interface and a Power BI dashboard.",
+        "XGBoost model trained on 10,000 profiles (18 socio-behavioral features): predicts a risk score and one of 21 crime types, ~85% accuracy on the binary classifier.",
+        "Legal RAG assistant: TF-IDF index over 1,485+ Tunisian law articles, cosine-similarity retrieval, source-grounded answers through an LLM fallback chain (Groq LLaMA 3.3 → Gemini Flash → Claude Haiku).",
+        "JWT-secured FastAPI backend, React 18 frontend with a real-time prediction dashboard (Recharts).",
       ],
     },
-    stack: [
-      "Python",
-      "Scikit-learn",
-      "XGBoost",
-      "Random Forest",
-      "LangChain",
-      "Base vectorielle",
-      "NLP",
-      "Streamlit",
-      "Power BI",
-    ],
+    stack: ["Python", "FastAPI", "XGBoost", "scikit-learn", "RAG (TF-IDF)", "React", "Recharts", "JWT"],
   },
   {
     id: "riot-analytics",
@@ -65,17 +55,17 @@ export const PROJECTS: readonly ProjectItem[] = [
     },
     highlights: {
       fr: [
-        "Développé des modèles de classification et de régression pour le résultat de match et le rang, plus un modèle de détection d'anomalies pour repérer les comptes « smurfs ».",
-        "Construit le pipeline complet : collecte via l'API Riot Games avec cache et retry/backoff, feature engineering, entraînement Scikit-learn.",
-        "Industrialisé le suivi des expériences avec MLflow et exposé les modèles via une API FastAPI consommée par une interface React.",
+        "4 modules de prédiction : classification du tier de rang, régression de progression, détection d'anomalies \"smurf\", prédiction d'issue de match (variantes early/full/cascade/strict).",
+        "Résilience API Riot : cache des réponses, retry avec backoff exponentiel, mapping des états (actif/expiré/rate-limited).",
+        "Suivi des expériences avec MLflow, API FastAPI (`/api/v1`) consommée par une interface React/TypeScript avec pages de comparaison de joueurs et cartes d'explicabilité.",
       ],
       en: [
-        "Built classification and regression models for match outcome and rank, plus an anomaly-detection model to flag smurf accounts.",
-        "Built the full pipeline: collection through the Riot Games API with caching and retry/backoff, feature engineering, Scikit-learn training.",
-        "Industrialised experiment tracking with MLflow and served the models through a FastAPI endpoint consumed by a React front-end.",
+        "4 prediction modules: rank tier classification, progression regression, smurf anomaly detection, match outcome prediction (early/full/cascade/strict variants).",
+        "Riot API resilience: response caching, exponential backoff retries, health-state mapping (active/expired/rate-limited).",
+        "Experiment tracking with MLflow, FastAPI backend (`/api/v1`) consumed by a React/TypeScript frontend with player-comparison pages and explainability cards.",
       ],
     },
-    stack: ["Python", "Scikit-learn", "MLflow", "FastAPI", "React", "API Riot Games"],
+    stack: ["Python", "FastAPI", "scikit-learn", "MLflow", "React", "TypeScript", "Recharts", "API Riot Games"],
   },
   {
     id: "the-room",
@@ -87,22 +77,22 @@ export const PROJECTS: readonly ProjectItem[] = [
       en: "Fullstack · Real-time",
     },
     problem: {
-      fr: "Donner à un escape game un site de réservation public et un back-office capable de suivre les créneaux en temps réel et d'exporter les données.",
-      en: "Give an escape-game venue a public booking site and a back office that tracks slots in real time and exports its data.",
+      fr: "Donner à un escape game un site de réservation public et un back-office capable de suivre les créneaux en temps réel et d'exporter les données, sans jamais accepter de double réservation.",
+      en: "Give an escape game venue a public booking site and a back-office able to track slots in real time and export data, with zero double-bookings.",
     },
     highlights: {
       fr: [
-        "Développé le site public de réservation en React et un dashboard d'administration.",
-        "Backend Express + PostgreSQL conteneurisé avec Docker.",
-        "Notifications en temps réel via SSE, et export des données au format PDF et Excel.",
+        "Réservation en ligne avec délai minimum de 90 minutes, verrouillage atomique des créneaux via PostgreSQL advisory lock (aucune double réservation même en cas de clics simultanés).",
+        "Dashboard admin JWT : gestion des scénarios, des réservations, export Excel/PDF, notifications en temps réel via SSE.",
+        "Backend Express + PostgreSQL conteneurisé avec Docker Compose, 14 tests d'intégration + test de charge à 60 utilisateurs simultanés, interface bilingue FR/EN.",
       ],
       en: [
-        "Built the public booking site in React alongside an admin dashboard.",
-        "Express + PostgreSQL backend, containerised with Docker.",
-        "Real-time notifications over SSE, plus PDF and Excel data export.",
+        "Online booking with a 90-minute minimum lead time, atomic slot locking via a PostgreSQL advisory lock (zero double-booking even under simultaneous clicks).",
+        "JWT-secured admin dashboard: scenario management, reservations, Excel/PDF export, real-time notifications via SSE.",
+        "Express + PostgreSQL backend containerized with Docker Compose, 14 integration tests plus a 60-concurrent-user load test, bilingual FR/EN interface.",
       ],
     },
-    stack: ["React", "Express", "PostgreSQL", "Docker", "SSE"],
+    stack: ["React", "Express", "PostgreSQL", "Docker", "JWT", "SSE"],
   },
   {
     id: "e-bike",
@@ -144,14 +134,14 @@ export const PROJECTS: readonly ProjectItem[] = [
     },
     highlights: {
       fr: [
-        "Application React / Vite générant des jeux de données criminologiques synthétiques en JSON et CSV.",
-        "Corrélations statistiques réalistes entre les variables, pour que les pipelines et les dashboards soient testés sur des distributions plausibles.",
+        "Application React/Vite générant des profils synthétiques en JSON/CSV, avec répartition 50/50 criminel/non-criminel.",
+        "Corrélations statistiques réalistes entre type de crime et profil (ex. vol → profil économique précaire ; crimes violents → troubles psychologiques et contexte familial instable), pour tester des dashboards sur des distributions plausibles.",
       ],
       en: [
-        "A React / Vite app generating synthetic criminology datasets as JSON and CSV.",
-        "Realistic statistical correlations between variables, so pipelines and dashboards are exercised against plausible distributions.",
+        "React/Vite application generating synthetic profiles in JSON/CSV, with a 50/50 criminal/non-criminal split.",
+        "Realistic statistical correlations between crime type and profile (e.g. theft → precarious economic profile; violent crime → psychological issues and unstable family background), used to test dashboards on plausible distributions.",
       ],
     },
-    stack: ["React", "Vite", "Génération de données synthétiques"],
+    stack: ["React", "Vite", "JavaScript"],
   },
 ] as const;

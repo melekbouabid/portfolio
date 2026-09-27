@@ -7,8 +7,8 @@ export const CONTACT_COPY = {
     en: "Let's talk about your data project",
   },
   lede: {
-    fr: "Je cherche un stage ou une alternance en Data Science / IA. Si vous avez un sujet intéressant, écrivez-moi.",
-    en: "I'm looking for an internship or apprenticeship in Data Science / AI. If you have an interesting problem, get in touch.",
+    fr: "Pour parler Data Science, IA, Machine Learning ou d'un projet à construire, écrivez-moi.",
+    en: "For conversations about Data Science, AI, Machine Learning or a project to build, get in touch.",
   },
 } satisfies SectionCopy;
 

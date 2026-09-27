@@ -7,8 +7,8 @@ export const HERO = {
    * deliberately shorter rather than a longer literal translation.
    */
   availability: {
-    fr: "Ouvert aux stages",
-    en: "Open to internships",
+    fr: "Ouvert aux collaborations",
+    en: "Open to collaboration",
   } satisfies LocalizedString,
 
   greeting: {
@@ -20,13 +20,13 @@ export const HERO = {
   rotatingRoles: ["Data Science", "Machine Learning", "GenAI / RAG", "MLOps"] as const,
 
   tagline: {
-    fr: "Je construis des systèmes qui transforment des données brutes en décisions — du nettoyage du jeu de données jusqu'à l'API qui sert le modèle.",
-    en: "I build systems that turn raw data into decisions — from cleaning the dataset all the way to the API that serves the model.",
+    fr: "Je construis des systèmes data qui transforment des données brutes en décisions — du nettoyage et du feature engineering jusqu'au modèle, à l'API et à l'interface qui le rendent utilisable.",
+    en: "I build data systems that turn raw data into decisions — from cleaning and feature engineering to the model, API and interface that make it usable.",
   } satisfies LocalizedString,
 
   note: {
-    fr: "→ Cycle d'ingénieur à Tek-Up, spécialité Data Science & IA. Deux stages, cinq projets livrés.",
-    en: "→ Engineering degree at Tek-Up, majoring in Data Science & AI. Two internships, five projects shipped.",
+    fr: "→ Cycle d'ingénieur à Tek-Up, spécialité Data Science & IA. Machine Learning, RAG, MLOps et cinq projets livrés.",
+    en: "→ Computer engineering degree at Tek-Up, majoring in Data Science & AI. Machine Learning, RAG, MLOps and five projects shipped.",
   } satisfies LocalizedString,
 
   cta: {
