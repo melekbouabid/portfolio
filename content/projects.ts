@@ -14,6 +14,33 @@ export const PROJECTS_COPY = {
 
 export const PROJECTS: readonly ProjectItem[] = [
   {
+    id: "solarvision",
+    name: "SolarVision — Prévision photovoltaïque",
+    year: "2026",
+    featured: true,
+    category: {
+      fr: "Séries temporelles · Benchmark · MLOps",
+      en: "Time Series · Benchmarking · MLOps",
+    },
+    problem: {
+      fr: "Prévoir à 7 jours la production journalière d'une installation photovoltaïque, et prouver statistiquement quel modèle est le meilleur plutôt que de se fier à une seule métrique.",
+      en: "Forecast the daily output of a photovoltaic system 7 days ahead, and prove statistically which model is best instead of relying on a single metric.",
+    },
+    highlights: {
+      fr: [
+        "Benchmark de 12 modèles (persistance, climatologie, ARIMA-Fourier, SARIMAX, VAR, Prophet, XGBoost, LSTM, GRU, hybride ARIMA + LSTM, LSTM global) sur 9 villes de France, Tunisie et Espagne, 2005–2023 (PVGIS, ERA5, NASA POWER).",
+        "Évaluation walk-forward, tests de Diebold-Mariano avec correction de Holm et intervalles de prévision à 95 % calibrés (GARCH) : tous les modèles battent la persistance (p < 0,001), et connaître la météo à venir réduit le RMSE d'environ un tiers. Analyses en R et en Python.",
+        "Chaîne MLOps : contrôles qualité des données, registre de modèles versionné (SHA-256), promotion atomique et retour arrière, CI GitHub Actions ; application FastAPI + React avec assistant RAG, conteneurisée avec Docker.",
+      ],
+      en: [
+        "Benchmark of 12 models (persistence, climatology, ARIMA-Fourier, SARIMAX, VAR, Prophet, XGBoost, LSTM, GRU, hybrid ARIMA + LSTM, global LSTM) over 9 cities in France, Tunisia and Spain, 2005–2023 (PVGIS, ERA5, NASA POWER).",
+        "Walk-forward evaluation, Diebold-Mariano tests with Holm correction and calibrated 95% prediction intervals (GARCH): every model beats persistence (p < 0.001), and knowing the upcoming weather cuts RMSE by about a third. Analyses in R and Python.",
+        "MLOps pipeline: data quality gates, versioned model registry (SHA-256), atomic promotion and rollback, GitHub Actions CI; FastAPI + React app with a RAG assistant, containerized with Docker.",
+      ],
+    },
+    stack: ["Python", "R", "PyTorch", "statsmodels", "Prophet", "XGBoost", "FastAPI", "React", "Docker", "GitHub Actions"],
+  },
+  {
     id: "csis",
     name: "CSIS — Criminal Study Intelligent System",
     year: "2025",

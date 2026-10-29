@@ -84,6 +84,14 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
           en: "Feature engineering and vectorised computation",
         },
       },
+      {
+        name: "Séries temporelles",
+        level: 80,
+        note: {
+          fr: "ARIMA, SARIMAX, Prophet, LSTM — SolarVision",
+          en: "Time series forecasting: ARIMA, SARIMAX, Prophet, LSTM — SolarVision",
+        },
+      },
     ],
   },
   {
@@ -151,7 +159,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       {
         name: "PyTorch",
         level: 60,
-        note: { fr: "Cursus académique", en: "Academic coursework" },
+        note: { fr: "Cursus académique, LSTM et GRU — SolarVision", en: "Academic coursework, LSTM and GRU — SolarVision" },
       },
     ],
   },
@@ -179,6 +187,11 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
         name: "TypeScript",
         level: 70,
         note: { fr: "E-Bike Rental Platform", en: "E-Bike Rental Platform" },
+      },
+      {
+        name: "R",
+        level: 70,
+        note: { fr: "Analyses statistiques — SolarVision", en: "Statistical analysis — SolarVision" },
       },
       {
         name: "Java",

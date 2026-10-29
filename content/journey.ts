@@ -62,6 +62,16 @@ export const JOURNEY: readonly TimelineItem[] = [
     },
   },
   {
+    id: "solarvision",
+    year: "2026",
+    kind: "project",
+    title: { fr: "SolarVision — benchmark de séries temporelles", en: "SolarVision — time series benchmark" },
+    body: {
+      fr: "Benchmark de modèles de prévision photovoltaïque, départagés statistiquement (Diebold-Mariano, intervalles de prévision) puis industrialisés avec une chaîne MLOps : registre de modèles versionné, CI et application FastAPI + React.",
+      en: "A benchmark of photovoltaic forecasting models, ranked statistically (Diebold-Mariano tests, prediction intervals), then productionized with an MLOps pipeline: versioned model registry, CI and a FastAPI + React app.",
+    },
+  },
+  {
     id: "graduation",
     year: "2027",
     kind: "milestone",

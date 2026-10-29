@@ -25,8 +25,8 @@ export const HERO = {
   } satisfies LocalizedString,
 
   note: {
-    fr: "→ Cycle d'ingénieur à Tek-Up, spécialité Data Science & IA. Machine Learning, RAG, MLOps et cinq projets livrés.",
-    en: "→ Computer engineering degree at Tek-Up, majoring in Data Science & AI. Machine Learning, RAG, MLOps and five projects shipped.",
+    fr: "→ Cycle d'ingénieur à Tek-Up, spécialité Data Science & IA. Machine Learning, RAG, MLOps et six projets livrés.",
+    en: "→ Computer engineering degree at Tek-Up, majoring in Data Science & AI. Machine Learning, RAG, MLOps and six projects shipped.",
   } satisfies LocalizedString,
 
   cta: {
